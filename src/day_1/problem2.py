@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" Advent of Code 2022 - Day 1, Problem 1
+""" Advent of Code 2022 - Day 1, Problem 2
 
 Load in input.txt and see the top 3 Elves carrying the 
 most calories. They are separated by newlines, for example:
