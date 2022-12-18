@@ -66,10 +66,10 @@ class Rock:
         },
     }
 
-    def __init__(self, x, y, rock_type, falling=True):
+    def __init__(self, rock_type, x=2, y=3, falling=True):
+        self.rock_type = rock_type # rock type
         self.x = x # x coordinate of the rock origin
         self.y = y # y coordinate of the rock origin
-        self.rock_type = rock_type # rock type
         self.falling = falling # is the rock falling?
 
     def __repr__(self):
@@ -89,6 +89,11 @@ class Rock:
         for offset in self.ROCK_TYPES[self.rock_type]["shape"]:
             coords.append((self.x + offset[0], self.y + offset[1]))
         return coords
+    
+    def move(self, x, y):
+        """ Move the rock """
+        self.x += x
+        self.y += y
     
     def freeze(self):
         """ Freeze the rock """

@@ -3,6 +3,9 @@ class Chamber(list):
     def __init__(self):
         super().__init__()
 
+    def __repr__(self):
+        return f"Chamber({super().__repr__()})"
+
     def display_chamber(self):
         """ Display the chamber """
         # Grid of dots to represent the chamber
@@ -18,11 +21,12 @@ class Chamber(list):
         y_min = 0
         y_max = max([y for x, y in grid])
         print(f"Max height: {y_max+1}")
-        # Display the chamber
-        for y in range(y_min, y_max + 1):
-            for x in range(0, 7):
+        # Display the chamber (upside down)
+        for y in range(y_max, y_min-1, -1):
+            for x in range(7):
                 if (x, y) in grid:
                     print("#", end="")
                 else:
                     print(".", end="")
             print()
+
